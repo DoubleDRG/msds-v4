@@ -7,9 +7,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${rds.hostname}:${rds.port}/${rds.db.name}
-    username: ${rds.username}
-    password: ${rds.password}
+    url: jdbc:mysql://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DATABASE}
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
 
   jpa:
     open-in-view: true
@@ -20,14 +20,14 @@ spring:
 
 logging:
   level:
-    '[org.springframework.boot.web]': INFO
+    "[org.springframework.boot.web]": INFO
 
 msds:
   back:
     home-uri: http://msds-capstone.store
   front:
-#    소셜 로그인 완료시 이 경로로 front 화면을 리다이렉트 시킴
-#    home-uri: https://social-login-front.d2q2g823gv40cu.amplifyapp.com/
+    #    소셜 로그인 완료시 이 경로로 front 화면을 리다이렉트 시킴
+    #    home-uri: https://social-login-front.d2q2g823gv40cu.amplifyapp.com/
     home-uri: http://localhost:3000
   chatbot:
     open-ai-uri: https://zzwa5nwag2.execute-api.ap-northeast-2.amazonaws.com/api/chatbot
@@ -48,7 +48,7 @@ naver:
 
 config:
   cors:
-#    여기에 front 서버 홈 주소를 넣어야, cors에러가 안남.
-#    credentials = true라서 반드시 적어야 함. 이 주소만 유일하게 cors 막음.
-#    allowed-origin: https://social-login-front.d2q2g823gv40cu.amplifyapp.com/
+    #    여기에 front 서버 홈 주소를 넣어야, cors에러가 안남.
+    #    credentials = true라서 반드시 적어야 함. 이 주소만 유일하게 cors 막음.
+    #    allowed-origin: https://social-login-front.d2q2g823gv40cu.amplifyapp.com/
     allowed-origin: http://localhost:3000
