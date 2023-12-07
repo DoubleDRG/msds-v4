@@ -21,6 +21,7 @@ public class MemberPlantController
     public RegisterPlantResponseDto registerMemberPlant(
             @RequestBody RegisterPlantRequestDto requestDto)
     {
+        System.out.println("//==Register MemberPlant Controller 진입!!==//");
         return memberPlantService.register(userPrincipal.getId(), requestDto);
     }
 
@@ -28,6 +29,7 @@ public class MemberPlantController
     @GetMapping("/api/member/plants")
     public GetPlantsResponseDto getMemberPlants()
     {
+        System.out.println("//==Get Member Plants Controller 진입!!==//");
         return memberPlantService.findAll(userPrincipal.getId());
     }
 
