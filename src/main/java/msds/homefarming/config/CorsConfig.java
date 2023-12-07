@@ -29,7 +29,7 @@ public class CorsConfig implements Filter
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
     {
-        System.out.println("//==doFilter()실행시작==//");
+//        System.out.println("//==doFilter()실행시작==//");
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         //==아래의 React서버URI에 대해서만 CORS정책을 적용함.==//
         //원래는 CORS_ALLOWED_ORIGIN이었음!
@@ -53,7 +53,7 @@ public class CorsConfig implements Filter
         source.registerCorsConfiguration("/**", corsConfiguration);
 
         CorsFilter corsFilter = new CorsFilter(source);
-        System.out.println("//==doFilter()실행 끝==//");
+//        System.out.println("//==doFilter()실행 끝==//");
         corsFilter.doFilter(request,response,chain);
     }
 

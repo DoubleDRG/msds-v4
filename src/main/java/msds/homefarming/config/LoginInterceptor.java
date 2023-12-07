@@ -21,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
     {
-        System.out.println("//==LoginIntercepter()실행시작==//");
+//        System.out.println("//==LoginIntercepter()실행시작==//");
 
         String jwtToken = JwtTokenProvider.extractJwtToken(request, "Authorization");
 
@@ -44,7 +44,7 @@ public class LoginInterceptor implements HandlerInterceptor
                 memberService.join(Member.create(testImageUri, testUsername, testNickname));
             }
             userPrincipal.setPrincipal(memberService.findByUsername(testUsername));
-            System.out.println("//==LoginInterceptor()실행 끝==//");
+//            System.out.println("//==LoginInterceptor()실행 끝==//");
             return true;
             //==테스트 계정 코드 끝==//
         }
@@ -55,7 +55,7 @@ public class LoginInterceptor implements HandlerInterceptor
             if (member == null) throw new NoExistMemberException("존재하지 않는 회원입니다.");
 
             userPrincipal.setPrincipal(member);
-            System.out.println("//==LoginInterceptor()실행 끝==//");
+//            System.out.println("//==LoginInterceptor()실행 끝==//");
             return true;
         }
     }
