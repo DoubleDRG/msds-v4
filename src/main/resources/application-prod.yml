@@ -24,7 +24,7 @@ logging:
 
 msds:
   back:
-    home-uri: http://msds-capstone.store
+    home-uri: https://capstone-msds.store
   front:
     #    소셜 로그인 완료시 이 경로로 front 화면을 리다이렉트 시킴
     #    home-uri: https://social-login-front.d2q2g823gv40cu.amplifyapp.com/
@@ -34,17 +34,14 @@ msds:
 
 kakao:
   auth:
-    redirect-uri: http://msds-capstone.store/kakao/callback
+#    redirect-uri: http://msds-capstone.store/kakao/callback
+    redirect-uri: https://capstone-msds.store/kakao/callback
     code-uri: https://kauth.kakao.com/oauth/authorize
     client-id: f698ae044a771060c21588e56dcb50f0
     response-type: code
     token-uri: https://kauth.kakao.com/oauth/token
     userinfo-uri: https://kapi.kakao.com/v2/user/me
     grant-type: authorization_code
-
-naver:
-  auth:
-    redirect-uri: http://msds-capstone.store/naver/callback
 
 config:
   cors:

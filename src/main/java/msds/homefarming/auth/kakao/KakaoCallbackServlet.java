@@ -129,7 +129,6 @@ public class KakaoCallbackServlet extends HttpServlet
         Member memberEntity = memberService.findByUsername(member.getUsername());
         return memberEntity != null;
     }
-
 }
 
 @Builder
