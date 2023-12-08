@@ -27,7 +27,6 @@ public class Diary
     @JsonIgnore
     private int createDay;
 
-    private LocalDateTime modifyDate;
     private String title;
     private String plantName;
     private String contents;
@@ -58,11 +57,11 @@ public class Diary
         return new Diary(title,plantName, createDate, contents);
     }
 
-    public Diary update(String title,String plantName, LocalDateTime modifyDate, String contents)
+    public Diary update(String title,String plantName, LocalDateTime createDate, String contents)
     {
         this.title = title;
         this.plantName = plantName;
-        this.modifyDate = modifyDate;
+        this.createDate = createDate;
         this.contents = contents;
         return this;
     }

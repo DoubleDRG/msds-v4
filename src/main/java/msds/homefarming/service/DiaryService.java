@@ -167,20 +167,17 @@ public class DiaryService
         diary.update(
                 requestDto.getTitle(),
                 requestDto.getPlantName(),
-                requestDto.getModifyDate(),
+                requestDto.getCreateDate(),
                 requestDto.getContents());
 
-        //==식물색 추가==//
         String plantColor = memberPlantRepository
                 .findColor(userPrincipal.getId(), requestDto.getPlantName());
-        //====//
 
         return new UpdateDiaryResponseDto(
                 diary.getId(),
                 diary.getCreateDate(),
                 diary.getTitle(),
                 diary.getAuthor().getNickname(),
-                //==식물 색==//
                 plantColor,
                 diary.getPlantName(),
                 diary.getContents());

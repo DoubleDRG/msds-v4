@@ -25,6 +25,12 @@ public class RedirectController
         return "redirect:/";
     }
 
+    @GetMapping("/diary/*")
+    public String diaryDetaliRedirect()
+    {
+        return "redirect:/";
+    }
+
     @GetMapping("/diary/edit")
     public String diaryEditRedirect()
     {

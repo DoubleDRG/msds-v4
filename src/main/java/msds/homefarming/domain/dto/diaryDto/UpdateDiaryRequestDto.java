@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 public class UpdateDiaryRequestDto
 {
-    private LocalDateTime modifyDate;
+    private LocalDateTime createDate;
     private String title;
     private String plantName;
     private String contents;

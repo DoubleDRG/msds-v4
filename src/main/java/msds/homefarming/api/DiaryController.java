@@ -37,7 +37,6 @@ public class DiaryController
             @RequestParam("month")int month
     )
     {
-        System.out.println("//==getMonthDiary Controller진입==//");
         return diaryService.findByMonth(year, month);
     }
 
