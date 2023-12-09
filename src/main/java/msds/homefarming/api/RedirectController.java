@@ -49,4 +49,10 @@ public class RedirectController
         return "redirect:/";
     }
 
+    @GetMapping("/my-info/*")
+    public String myInfoEtcRedirect()
+    {
+        return "redirect:/";
+    }
+
 }
