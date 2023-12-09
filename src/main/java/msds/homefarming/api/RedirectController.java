@@ -26,7 +26,7 @@ public class RedirectController
     }
 
     @GetMapping("/diary/*")
-    public String diaryDetaliRedirect()
+    public String diaryDetailRedirect()
     {
         return "redirect:/";
     }
@@ -38,7 +38,7 @@ public class RedirectController
     }
 
     @GetMapping("/chatbot")
-    public String chatbotRedircet()
+    public String chatbotRedirect()
     {
         return "redirect:/";
     }
