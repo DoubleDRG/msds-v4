@@ -1,7 +1,12 @@
 package msds.homefarming.api;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RedirectController
@@ -24,16 +29,23 @@ public class RedirectController
         return "index.html";
     }
 
+
     @GetMapping("/diary/*")
     public String diaryDetailRedirect()
     {
-        return "index.html";
+        return "redirect:/diary";
     }
 
     @GetMapping("/diary/edit")
     public String diaryEditRedirect()
     {
-        return "index.html";
+        return "redirect:/diary";
+    }
+
+    @GetMapping("/diary/edit/{id}")
+    public String diaryEditEtcRedirect(@PathVariable String id)
+    {
+        return "redirect:/diary/" + id;
     }
 
     @GetMapping("/chatbot")
@@ -54,4 +66,15 @@ public class RedirectController
         return "index.html";
     }
 
+    @GetMapping("/my-info/enroll")
+    public String myInfoEnrollRedirect()
+    {
+        return "redirect:/my-info";
+    }
+
+    @GetMapping("/my-info/enroll/{id}")
+    public String myInfoEnrollDetailRedirect(@PathVariable String id)
+    {
+        return "redirect:/my-info";
+    }
 }
