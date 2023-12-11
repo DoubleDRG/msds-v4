@@ -17,7 +17,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    show-sql: true
+    show-sql: false
   thymeleaf:
     prefix: classpath:static/
 
@@ -38,6 +38,11 @@ kakao:
     token-uri: https://kauth.kakao.com/oauth/token
     userinfo-uri: https://kapi.kakao.com/v2/user/me
     grant-type: authorization_code
+#  로그아웃
+  logout:
+    redirect-uri: http://localhost:8080/kakao/logout/callback
+    uri: https://kauth.kakao.com/oauth/logout
+# 로그아웃
   cookie:
     domain: localhost
     path: /

@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import msds.homefarming.auth.JwtTokenProvider;
+import msds.homefarming.auth.UserPrincipal;
 import msds.homefarming.auth.kakao.dto.KakaoAccessTokenResponseDto;
 import msds.homefarming.auth.kakao.dto.KakaoMemberDto;
 import msds.homefarming.domain.Member;
@@ -30,6 +31,7 @@ import static org.springframework.http.MediaType.*;
 @WebServlet(name = "kakaoCallbackServlet", urlPatterns = "/kakao/callback")
 public class KakaoCallbackServlet extends HttpServlet
 {
+    private final UserPrincipal userPrincipal;
     private final MemberService memberService;
     private final JwtTokenProvider jwtTokenProvider;
 
@@ -78,6 +80,7 @@ public class KakaoCallbackServlet extends HttpServlet
                 .build()
                 .post()
                 .getAccessToken();
+
 //        System.out.println("1.카카오에 AccessToken요청 후 받은 토큰 == " + accessToken);
         log.info("[카카오] 1.카카오에 AccessToken 후 받은 토큰 : {}", accessToken);
 
