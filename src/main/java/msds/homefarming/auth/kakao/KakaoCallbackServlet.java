@@ -111,11 +111,8 @@ public class KakaoCallbackServlet extends HttpServlet
         cookie.setPath("/");
 
         //==여기서 도메인을 설정해야 해당 도메인에서 쿠키를 저장함==//
-        //==FE서버의 도메인 주소를 적어야 함==//
-        //==로컬에서 FE를 돌릴 때는 쿠키는 들어오지만 저장을 안해서 작동안함==//
-//        cookie.setDomain("ec2-15-165-244-200.ap-northeast-2.compute.amazonaws.com");
-//        cookie.setDomain("localhost");
-        cookie.setDomain("capstone-msds.store");
+//        cookie.setDomain("capstone-msds.store");
+        cookie.setDomain("localhost");
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");

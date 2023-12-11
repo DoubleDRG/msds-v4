@@ -38,6 +38,9 @@ kakao:
     token-uri: https://kauth.kakao.com/oauth/token
     userinfo-uri: https://kapi.kakao.com/v2/user/me
     grant-type: authorization_code
+  cookie:
+    domain: localhost
+    path: /
 
 naver:
   auth:
