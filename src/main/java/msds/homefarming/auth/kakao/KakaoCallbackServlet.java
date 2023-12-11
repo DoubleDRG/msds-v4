@@ -51,6 +51,12 @@ public class KakaoCallbackServlet extends HttpServlet
     @Value("${kakao.auth.client-id}")
     String KAKAO_AUTH_CLIENT_ID;
 
+    @Value("${kakao.cookie.domain}")
+    String COOKIE_DOMAIN;
+
+    @Value("${kakao.cookie.path}")
+    String COOKIE_PATH;
+
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -107,12 +113,10 @@ public class KakaoCallbackServlet extends HttpServlet
         Cookie cookie = new Cookie("Authorization", jwtToken);
         cookie.setMaxAge(36000); //10시간
 
-        //==FE가 서버의 해당 경로와 하위 경로를 갈 때 쿠키를 주도록 함==//
-        cookie.setPath("/");
-
         //==여기서 도메인을 설정해야 해당 도메인에서 쿠키를 저장함==//
-//        cookie.setDomain("capstone-msds.store");
-        cookie.setDomain("localhost");
+        cookie.setDomain(COOKIE_DOMAIN);
+        //==FE가 서버의 해당 경로와 하위 경로를 갈 때 쿠키를 주도록 함==//
+        cookie.setPath(COOKIE_PATH);
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
