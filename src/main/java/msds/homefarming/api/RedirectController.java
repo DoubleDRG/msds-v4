@@ -77,4 +77,10 @@ public class RedirectController
     {
         return "redirect:/my-info";
     }
+
+    @GetMapping("/dict/{plantName}")
+    public String DictionaryRedirect()
+    {
+        return "redirect:/dict";
+    }
 }
