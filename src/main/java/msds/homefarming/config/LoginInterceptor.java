@@ -40,7 +40,8 @@ public class LoginInterceptor implements HandlerInterceptor
             Member testMember = memberService.findByUsername(testUsername);
             if (testMember == null)
             {
-                String testImageUri = "https://th.bing.com/th/id/OIP.QjAvas4wmO7llZ_dmFspGAAAAA?rs=1&pid=ImgDetMain";
+//                String testImageUri = "https://th.bing.com/th/id/OIP.QjAvas4wmO7llZ_dmFspGAAAAA?rs=1&pid=ImgDetMain";
+                String testImageUri = "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/436/8142f53e51d2ec31bc0fa4bec241a919_crop.jpeg";
                 memberService.join(Member.create(testImageUri, testUsername, testNickname));
             }
             userPrincipal.setPrincipal(memberService.findByUsername(testUsername));
