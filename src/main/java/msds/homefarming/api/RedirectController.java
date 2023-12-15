@@ -83,4 +83,11 @@ public class RedirectController
     {
         return "redirect:/dict";
     }
+
+    //==카카오 로그인 새로고침 문제 이슈==//
+    @GetMapping("/kakao/login/redirect")
+    public String KakaoLoginRedirect()
+    {
+        return "redirect:/kakao/login";
+    }
 }
